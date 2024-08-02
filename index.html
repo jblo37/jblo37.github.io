@@ -25,7 +25,7 @@
     </style>
 </head>
 <body>
-    <h1>Clan Members3</h1>
+    <h1>Clan Members4</h1>
     <ul id="clanMembers"></ul>
 
     <script>
@@ -35,7 +35,7 @@
         async function fetchClanMembers() {
             try {
                 // Construir la URL del endpoint para obtener los miembros del clan, incluyendo la versión v1
-                const url = 'https://api.royaleapi.com/v1/clans/' + clanTag;
+                const url = 'https://api.clashroyale.com/v1/clans/' + clanTag;
                 const response = await fetch(url, {
                     headers: {
                         Authorization: 'Bearer ' + apiKey,
