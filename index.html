@@ -25,43 +25,48 @@
     </style>
 </head>
 <body>
-    <h1>Clan Members4</h1>
+    <h1>Clan Members2</h1>
     <ul id="clanMembers"></ul>
 
     <script>
         const apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg'; // Reemplaza con tu clave de API
-        const clanTag = '%23LQQR9GQR'; // Reemplaza con el tag de tu clan
+        const clanTag = '#LQQR9GQR'; // Reemplaza con el tag de tu clan
 
         async function fetchClanMembers() {
             try {
-                // Construir la URL del endpoint para obtener los miembros del clan, incluyendo la versión v1
-                const url = 'https://api.clashroyale.com/v1/clans/' + clanTag;
+                const url = `https://api.clashroyale.com/v1/clans/${encodeURIComponent(clanTag)}`;
                 const response = await fetch(url, {
                     headers: {
-                        Authorization: 'Bearer ' + apiKey,
+                        Authorization: `Bearer ${apiKey}`,
                     },
                 });
 
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
 
                 const data = await response.json();
+                console.log('API Response:', data); // Imprime la respuesta de la API para depuración
                 const members = data.members;
 
                 const clanMembersList = document.getElementById('clanMembers');
                 clanMembersList.innerHTML = ''; // Limpiar lista antes de añadir nuevos elementos
 
-                // Asegurarse de que hay miembros
-                if (members && members.length > 0) {
-                    members.forEach(function(member) {
+                if (members && Array.isArray(members)) {
+                    if (members.length > 0) {
+                        members.forEach(member => {
+                            const li = document.createElement('li');
+                            li.textContent = member.name || 'No name'; // Muestra el nombre del miembro
+                            clanMembersList.appendChild(li);
+                        });
+                    } else {
                         const li = document.createElement('li');
-                        li.textContent = member.name; // Mostrar el nombre del miembro
+                        li.textContent = 'No members found'; // Mensaje cuando no hay miembros
                         clanMembersList.appendChild(li);
-                    });
+                    }
                 } else {
                     const li = document.createElement('li');
-                    li.textContent = 'No members found'; // Mensaje cuando no hay miembros
+                    li.textContent = 'Unexpected data format'; // Mensaje para formato de datos inesperado
                     clanMembersList.appendChild(li);
                 }
             } catch (error) {
