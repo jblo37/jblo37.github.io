@@ -4,59 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participantes del Clan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .player {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
-    <h1>Clands</h1>
-    <div id="participants"></div>
+    <h1>Participantes pou del Clan</h1>
+    <ul id="clanMembers"></ul>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            //const apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg'; // Reemplaza con tu API Key
-           // const clanTag = '#LQQR9GQR'; // Reemplaza con tu Clan Tag
-            const url = 'https://api.clashroyale.com/v1/clans/%23LQQR9GQR/members';
+        // Reemplaza 'TU_TOKEN_AQUÍ' con tu propio token de API
+        const API_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg';
 
-            fetch(url, {
-                headers: {
-                    'Authorization': Bearer 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                const participantsDiv = document.getElementById('participants');
-                participantsDiv.innerHTML = '';
+        // URL de la API de Clash Royale para obtener datos del clan
+        const CLAN_API_URL = 'https://api.clashroyale.com/v1/clans/%23LQQR9GQR/members';
 
-                // Asegúrate de que data.members existe y es un array
-                if (data.members && Array.isArray(data.members)) {
-                    data.members.forEach(member => {
-                        participantsDiv.innerHTML += 
-                            <div class="player">
-                                <h3>${member.name}</h3>
-                                <p>Trophy Count: ${member.trophies}</p>
-                                <p>Role: ${member.role}</p>
-                            </div>
-                        ;
+        async function fetchClanMembers() {
+            try {
+                const response = await fetch(CLAN_API_URL, {
+                    headers: {
+                        'Authorization': `Bearer ${API_TOKEN}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const clanMembersList = document.getElementById('clanMembers');
+
+                    data.items.forEach(member => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = member.name;
+                        clanMembersList.appendChild(listItem);
                     });
                 } else {
-                    participantsDiv.innerHTML = '<p>No members found.</p>';
+                    console.error('Error al obtener datos del clan:', response.status);
                 }
-            })
-            .catch(error => {
-                console.error('Error fetching clan data:', error);
-                document.getElementById('participants').innerHTML = '<p>Error fetching data. Check console for details.</p>';
-            });
-        });
+            } catch (error) {
+                console.error('Error de red:', error);
+            }
+        }
+
+        fetchClanMembers();
     </script>
 </body>
 </html>
