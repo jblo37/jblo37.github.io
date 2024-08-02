@@ -1,32 +1,55 @@
-const apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg';  // Reemplaza con tu clave de API
-const apiUrl = 'https://api.clashroyale.com/v1';  // Base URL de la API
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale Clan Members</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input { padding: 8px; margin-right: 10px; }
+        button { padding: 8px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Consultar Miembros del Clan de Clash Royale</h1>
+    <input type="text" id="clanTag" placeholder="Ingresa el tag del clan">
+    <button onclick="fetchClanMembers()">Consultar</button>
+    <ul id="membersList"></ul>
 
-// Función para obtener datos de una solicitud específica
-async function fetchData(endpoint) {
-    const response = await fetch(${apiUrl}${endpoint}, {
-        method: 'GET',
-        headers: {
-            'Authorization': Bearer ${apiKey},
-            'Accept': 'application/json',
-        },
-    });
+    <script>
+        async function fetchClanMembers() {
+            const clanTag = document.getElementById('clanTag').value;
+            const apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg'; // Reemplaza con tu clave de API
+            const url = https://api.clashroyale.com/v1/clans/%23${encodeURIComponent(clanTag)}/members;
 
-    if (!response.ok) {
-        throw new Error(Error: ${response.statusText});
-    }
+            try {
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': Bearer ${apiKey}
+                    }
+                });
 
-    return response.json();
-}
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud a la API');
+                }
 
-// Ejemplo de cómo consultar el perfil de un jugador por su tag
-async function getPlayerData(playerTag) {
-    try {
-        const data = await fetchData(/players/${encodeURIComponent(playerTag)});
-        console.log(data);
-    } catch (error) {
-        console.error(error);
-    }
-}
+                const data = await response.json();
+                const membersList = document.getElementById('membersList');
+                membersList.innerHTML = '';
 
-// Ejemplo de uso: consulta datos del jugador con el tag '9L2C2'
-getPlayerData('9L2C2');
+                data.items.forEach(member => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = member.name;
+                    membersList.appendChild(listItem);
+                });
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un problema al consultar los datos.');
+            }
+        }
+    </script>
+</body>
+</html>
