@@ -1,50 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total de Puntos de Participantes</title>
-</head>
-<body>
-    <h1>Total de Puntos de los Participantes</h1>
-    <div id="result">Cargando...</div>
+const apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg';  // Reemplaza con tu clave de API
+const apiUrl = 'https://api.clashroyale.com/v1';  // Base URL de la API
 
-    <script>
-        const API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg';  // Reemplaza con tu API Key
-        const CLAN_TAG = '#LQQR9GQR';  // Reemplaza con el tag del clan
-        const URL = https://api.clashroyale.com/v1/clans/${CLAN_TAG}/riverracelog;
+// Función para obtener datos de una solicitud específica
+async function fetchData(endpoint) {
+    const response = await fetch(${apiUrl}${endpoint}, {
+        method: 'GET',
+        headers: {
+            'Authorization': Bearer ${apiKey},
+            'Accept': 'application/json',
+        },
+    });
 
-        async function getClanRiverRacePoints() {
-            try {
-                const response = await fetch(URL, {
-                    headers: {
-                        'Authorization': Bearer ${API_KEY}
-                    }
-                });
+    if (!response.ok) {
+        throw new Error(Error: ${response.statusText});
+    }
 
-                if (!response.ok) {
-                    throw new Error('Error en la solicitud: ' + response.statusText);
-                }
+    return response.json();
+}
 
-                const data = await response.json();
-                const riverRaceLog = data.items || [];  // Asegúrate de que 'items' es el campo correcto
+// Ejemplo de cómo consultar el perfil de un jugador por su tag
+async function getPlayerData(playerTag) {
+    try {
+        const data = await fetchData(/players/${encodeURIComponent(playerTag)});
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-                let totalPoints = 0;
-                riverRaceLog.forEach(log => {
-                    if (log.participants) {
-                        log.participants.forEach(participant => {
-                            totalPoints += participant.points || 0;  // Asegúrate de que 'points' es el campo correcto
-                        });
-                    }
-                });
-
-                document.getElementById('result').innerText = Total de puntos de los participantes: ${totalPoints};
-            } catch (error) {
-                document.getElementById('result').innerText = 'Error al consultar la API: ' + error.message;
-            }
-        }
-
-        getClanRiverRacePoints();
-    </script>
-</body>
-</html>
+// Ejemplo de uso: consulta datos del jugador con el tag '9L2C2'
+getPlayerData('9L2C2');
