@@ -20,7 +20,14 @@
 
     <script>
         async function fetchClanMembers() {
-            const clanTag = document.getElementById('clanTag').value;
+            const clanTag = document.getElementById('clanTag').value.trim();
+
+            // Validar si el campo está vacío
+            if (!clanTag) {
+                alert('Por favor ingresa el tag del clan.');
+                return;
+            }
+
             const apiKey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg'; // Reemplaza con tu clave de API
             const url = https://api.clashroyale.com/v1/clans/%23${encodeURIComponent(clanTag)}/members;
 
@@ -32,22 +39,34 @@
                 });
 
                 if (!response.ok) {
-                    throw new Error('Error en la solicitud a la API');
+                    // Mostrar un mensaje de error si la respuesta no es ok
+                    throw new Error(Error en la solicitud a la API: ${response.status} ${response.statusText});
                 }
 
                 const data = await response.json();
+
+                if (!data.items) {
+                    throw new Error('El formato de la respuesta no es el esperado.');
+                }
+
                 const membersList = document.getElementById('membersList');
                 membersList.innerHTML = '';
 
-                data.items.forEach(member => {
+                if (data.items.length === 0) {
                     const listItem = document.createElement('li');
-                    listItem.textContent = member.name;
+                    listItem.textContent = 'No se encontraron miembros.';
                     membersList.appendChild(listItem);
-                });
+                } else {
+                    data.items.forEach(member => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = member.name;
+                        membersList.appendChild(listItem);
+                    });
+                }
 
             } catch (error) {
                 console.error('Error:', error);
-                alert('Hubo un problema al consultar los datos.');
+                alert('Hubo un problema al consultar los datos. Verifica la consola para más detalles.');
             }
         }
     </script>
