@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale Clan Members</title>
+</head>
+<body>
+    <h1>Miembros del Clan</h1>
+    <ul id="clan-members"></ul>
+
+    <script>
+        // Reemplaza 'YOUR_API_KEY' con tu clave de API de Clash Royale
+        const API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImY4MjBkZjJhLTZmZGEtNDJiNS05NmU0LTMyNmJiZGVlNDg3YyIsImlhdCI6MTcyMjIwNTE0Mywic3ViIjoiZGV2ZWxvcGVyL2I5MjBmNmIyLTI0MDAtZGM3Zi1lZGM2LWYxNzI4MTYzMDYyOCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODkuMTQzLjIyNS4yMzgiXSwidHlwZSI6ImNsaWVudCJ9XX0.HBuxPnSC6XhL3eJ4UuUqRImRRA1PfjKGz5UPiAqm9pn800-u_k0K7AicrxBjCDffpwIHKLIczydyG6fV-3gROg';
+        // Reemplaza 'CLAN_TAG' con el tag de tu clan
+        const CLAN_TAG = 'LQQR9GQR';
+
+        // Función para obtener los miembros del clan
+        async function getClanMembers() {
+            const url = `https://api.clashroyale.com/v1/clans/%23${encodeURIComponent(CLAN_TAG)}/members`;
+            const response = await fetch(url, {
+                headers: {
+                    'Authorization': `Bearer ${API_KEY}`
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                displayClanMembers(data.items);
+            } else {
+                console.error('Error al obtener los datos del clan:', response.statusText);
+            }
+        }
+
+        // Función para mostrar los nombres de los miembros en la pantalla
+        function displayClanMembers(members) {
+            const membersList = document.getElementById('clan-members');
+            members.forEach(member => {
+                const listItem = document.createElement('li');
+                listItem.textContent = member.name;
+                membersList.appendChild(listItem);
+            });
+        }
+
+        // Llamar a la función para obtener los miembros del clan al cargar la página
+        getClanMembers();
+    </script>
+</body>
+</html>
