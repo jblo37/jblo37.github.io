@@ -42,8 +42,8 @@
                     const content = document.getElementById('content');
                     rows.forEach((row, index) => {
                         const columns = row.split(',');
-                        const playerName = columns[0];
-                        const playerTotalContribution = columns[1];
+                        const playerName = columns[2];
+                        const playerTotalContribution = columns[9];
                         const tr = document.createElement('tr');
                         
                         if (index < 20) {
