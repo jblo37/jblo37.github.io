@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guerreros Mayas</title>
+    <title>Mostrar CSV</title>
     <style>
         .green { background-color: green; }
         .orange { background-color: orange; }
         .red { background-color: red; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        table { 
+            margin: 0 auto; /* Centra la tabla */
+            border-collapse: collapse; 
+        }
+        th, td { 
+            border: 1px solid black; 
+            padding: 8px; 
+            text-align: center; /* Centra el texto en las celdas */
+            white-space: nowrap; /* Ajusta el tamaño de las celdas al texto */
+        }
     </style>
 </head>
 <body>
-    <h1>Guerreros Mayas</h1>
+    <h1 style="text-align: center;">Lista de Jugadores</h1> <!-- Centra el título -->
     <table>
         <thead>
             <tr>
@@ -27,30 +35,30 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('archivo.csv')
+            fetch('ruta/al/archivo.csv')
                 .then(response => response.text())
                 .then(data => {
                     const rows = data.split('\n').slice(1, 51); // Obtener los primeros 50 registros
                     const content = document.getElementById('content');
                     rows.forEach((row, index) => {
                         const columns = row.split(',');
-                        const playerName = columns[2];
-                        const playerTotalContribution = columns[9];
+                        const playerName = columns[0];
+                        const playerTotalContribution = columns[1];
                         const tr = document.createElement('tr');
                         
                         if (index < 20) {
                             tr.classList.add('green');
-                        } else if (index >= 20 && index < 40) {
+                        } else if (index >= 30 && index < 40) {
                             tr.classList.add('orange');
                         } else if (index >= 40 && index < 50) {
                             tr.classList.add('red');
                         }
 
-                        tr.innerHTML = `
+                        tr.innerHTML = 
                             <td>${index + 1}</td>
                             <td>${playerName}</td>
                             <td>${playerTotalContribution}</td>
-                        `;
+                        ;
                         
                         content.appendChild(tr);
                     });
