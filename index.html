@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guerreros Mayas</title>
+    <style>
+        .green { background-color: green; }
+        .orange { background-color: orange; }
+        .red { background-color: red; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>Guerreros Mayas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre del Jugador</th>
+                <th>Contribución Total</th>
+            </tr>
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('archivo.csv')
+                .then(response => response.text())
+                .then(data => {
+                    const rows = data.split('\n').slice(1, 51); // Obtener los primeros 50 registros
+                    const content = document.getElementById('content');
+                    rows.forEach((row, index) => {
+                        const columns = row.split(',');
+                        const playerName = columns[2];
+                        const playerTotalContribution = columns[9];
+                        const tr = document.createElement('tr');
+                        
+                        if (index < 20) {
+                            tr.classList.add('green');
+                        } else if (index >= 20 && index < 40) {
+                            tr.classList.add('orange');
+                        } else if (index >= 40 && index < 50) {
+                            tr.classList.add('red');
+                        }
+
+                        tr.innerHTML = `
+                            <td>${index + 1}</td>
+                            <td>${playerName}</td>
+                            <td>${playerTotalContribution}</td>
+                        `;
+                        
+                        content.appendChild(tr);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
