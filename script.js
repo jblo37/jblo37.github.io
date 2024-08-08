@@ -4,7 +4,7 @@ const API_URL = 'https://api.clashroyale.com/v1/players/%239QGGLVUV2';
 fetch(API_URL, {
   method: 'GET',
   headers: {
-    'Authorization': Bearer ${API_KEY}
+    'Authorization': `Bearer ${API_KEY}`
   }
 })
 .then(response => response.json())
