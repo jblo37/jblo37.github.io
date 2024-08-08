@@ -10,5 +10,8 @@ fetch(API_URL, {
   }
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => {
+  const riverRaceTrophies = data.clan.riverRace.trophies;
+  console.log(`Total de trofeos en la Carrera de Río: ${riverRaceTrophies}`);
+})
 .catch(error => console.error('Error:', error));
