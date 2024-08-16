@@ -1,131 +1,16 @@
 <!doctype html>
 <html lang="es" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
-
+  <head><script src="../recursos/js/color-modes.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Guerreros Mayas</title>
+    <link rel="icon" href="recursos/img/cr.ico" type="image/x-icon">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-     
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-
-
-      .dropdown-item.active, .dropdown-item:active {
-          --bs-dropdown-link-active-color: none;    
-          --bs-dropdown-link-active-bg:none;
-      }
-
-      .p-diamante {
-          position: relative;  
-          border-radius: 10px;
-      }
-
-      .p-diamante:before,
-      .p-diamante:after {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        background: -webkit-linear-gradient(45deg, #8dfaff,#ff8de4,#ffdb1d);
-        background: linear-gradient(45deg, #8dfaff,#ff8de4,#ffdb1d);
-        background-size: 400% 400%;
-        width: calc(100% + 5px);
-        height: calc(100% + 5px);
-        border-radius: 10px;
-        z-index: -1;
-        animation: animacion 10s ease alternate infinite;
-      }
-      .p-diamante:after {
-        filter: blur(10px);
-      }
-      @keyframes animacion {
-        0% {
-          background-position: 0 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      .modal {
-       backdrop-filter: blur(5px);
-      }      
-
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="checkout.css" rel="stylesheet">
-    <link href="headers.css" rel="stylesheet">
-    <link href="modals.css" rel="stylesheet">
+    <link href="recursos/css/bootstrap.min.css" rel="stylesheet">
+    <link href="recursos/css/gmayas.min.css" rel="stylesheet">
   </head>
   <body class="bg-body-tertiary">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -183,7 +68,6 @@
       </ul>
     </div>
 
-    
 <div class="container">
    <div class="container">
     <header class="d-flex justify-content-center py-3 border-bottom">
@@ -197,29 +81,26 @@
 
   <main>
     <div class="py-5 text-center">
-      <img class="d-block mx-auto mb-4" src="../assets/brand/cr.png" alt="" width="72" height="57">
+      <img class="d-block mx-auto mb-4" src="recursos/img/cr.png" alt="" width="72" height="52">
       <h2 class="">Guerreros Mayas</h2>
       <p class="lead">En esta lista encontraran su posición respecto a como van en puntos de Guerra de las últimas 10 semanas. Del lugar 2 al 21, tendrán que competir en un torneo, y el primer lugar se llevara otro ¡Pass Royale Diamante!</p>
       <p class=""></p>
-    </div>
-
-   
+    </div>    
     <div class=" g-5 d-flex gap-2 justify-content-center py-5">
       <div class="col-md-5 col-12 col-lg-6  order-md-last">
         <h4 id="pase" class="d-flex justify-content-between align-items-center mb-3">          
           <span class="badge  rounded-pill"></span>
         </h4>
-        <ul id="participants-listt" class="p-diamante list-group  mb-3">             
+        <ul id="jugador-uno" class="p-diamante list-group  mb-3">             
         </ul>        
       </div>      
     </div>
      <div class=" g-5 d-flex gap-2 justify-content-center ">
       <div class="col-md-5 col-12 col-lg-6  order-md-last">        
-        <ul id="participants-list" class="list-group  mb-3">
+        <ul id="jugadores-lista" class="list-group  mb-3">
         </ul>        
       </div>      
-    </div>
-   
+    </div>    
   </main>
   <div class="modal modal-sheet fade d-flex" id="modalTour" tabindex="-1" aria-labelledby="modalTourLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered " role="document">
@@ -253,122 +134,7 @@
     <p class="mb-1">&copy; 2017–2024 Guerreros Mayas</p>    
   </footer>
 </div>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-<script>     
-
-const key = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjFjNDcxNTg4LTZkMWQtNGQ1YS1iMmFjLTZjNDM5MzY5NmQxNCIsImlhdCI6MTcyMzA5MTY1MSwic3ViIjoiZGV2ZWxvcGVyL2YwOTM0YTg4LTRkYzMtNWUyOC1lMDFkLWRiZjIyZjdkMzY1NCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyI0NS43OS4yMTguNzkiXSwidHlwZSI6ImNsaWVudCJ9XX0.GmalFLWjbERMCJ4PKzcvZuaXHQoCAZxgfklUzexrmfd6t1zywazTFRZhRxCplawnzAUVDySt9-b7CR0Mnjt0eQ'; // Reemplaza con tu clave de API
-const tagClan = '#LQQR9GQR'; // Reemplaza con el tag de tu clan
-
-// Obtener los registros de la carrera del río
-fetch(`https://proxy.royaleapi.dev/v1/clans/${encodeURIComponent(tagClan)}/riverracelog`, {
-  method: 'GET',
-  headers: {
-    'Authorization': `Bearer ${key}`
-  }
-})
-.then(response => response.json())
-.then(riverRaceData => {
-  const participantsPoints = {};
-
-  // Iterar a través de las últimas 10 semanas
-  for (let i = 0; i < 10; i++) {
-    const week = riverRaceData.items[i];
-    if (week) {
-      week.standings.forEach(standing => {
-        if (standing.clan.tag === tagClan) { // Verificar que el clan es el correcto
-          standing.clan.participants.forEach(participant => {
-            if (!participantsPoints[participant.tag]) {
-              participantsPoints[participant.tag] = { name: participant.name, totalFame: 0 };
-            }
-            participantsPoints[participant.tag].totalFame += participant.fame;
-          });
-        }
-      });
-    }
-  }
-
-  // Obtener la lista actual de miembros del clan
-  return fetch(`https://proxy.royaleapi.dev/v1/clans/${encodeURIComponent(tagClan)}`, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${key}`
-    }
-  })
-  .then(response => response.json())
-  .then(clanData => {
-    const activeMembers = clanData.memberList;
-
-    // Filtrar y ordenar los resultados de los participantes activos
-    const sortedParticipants = activeMembers.map(member => {
-      const participant = participantsPoints[member.tag];
-      return {
-        name: member.name,
-        totalFame: participant ? participant.totalFame : 0
-      };
-    }).sort((a, b) => b.totalFame - a.totalFame);
-
-    // Mostrar los resultados ordenados (del 1 al 50)
-    const participantsList = document.getElementById('participants-list');
-    sortedParticipants.slice(1, 50).forEach((participant, index) => {
-      const listItem = document.createElement('li');
-      listItem.className = 'list-group-item d-flex justify-content-between lh-sm';
-      listItem.innerHTML = `
-        <div>
-          <h6 class="my-0">${index + 2}. ${participant.name}</h6>
-        </div>
-        <span class="text-body-secondary">${participant.totalFame}</span>
-      `;
-      participantsList.appendChild(listItem);
-
-    });
-
-    const hh = document.getElementById('pase');
-    const titulo = document.createElement('span');    
-      hh.innerHTML = `
-       <span class="">Pass Roayale Diamante</span>
-      `;
-      hh.appendChild(titulo);
-    
-
-    const participantsListt = document.getElementById('participants-listt');
-    sortedParticipants.slice(0, 1).forEach((participant, index) => {
-      const listItemt = document.createElement('li');
-      
-
-
-      listItemt.className = 'list-group-item d-flex justify-content-between lh-sm';
-      listItemt.innerHTML = `
-        <div>
-          <h6 class="my-0">${index + 1}. ${participant.name}</h6>
-        </div>
-        <span class="text-body-secondary">${participant.totalFame}</span>
-      `;
-      participantsListt.appendChild(listItemt);
-
-    });
-    
-  });
-
-})
-.catch(error => {
-  console.error('Error:', error);
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var modalElement = document.getElementById('modalTour');
-    var modal = new bootstrap.Modal(modalElement, {
-      backdrop: 'static',
-      keyboard: false
-    });
-    modal.show();
-
-document.querySelector('[data-bs-dismiss="modal"]').addEventListener('click', function () {
-  var myModalEl = document.getElementById('modalTour');
-  var modal = bootstrap.Modal.getInstance(myModalEl);
-  modal.hide();
-});
-});
- </script>
+<script src="recursos/js/bootstrap.bundle.min.js"></script>
+<script src="recursos/js/gmayas.min.js"></script>
   </body>
 </html>
