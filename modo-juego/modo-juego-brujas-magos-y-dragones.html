@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <meta property="og:title" content="Clan Guerreros Mayas">
+    <meta property="og:description" content="Aquí podras seguir tus avances en puntos de guerra y los eventos de nuestra comunidad.">
+    <meta property="og:image" content="https://guerrerosmayas.me/assets/brand/og-img-index.jpg">
+    <meta property="og:url" content="https://guerrerosmayas.me">
+    <title>Brujas, Magos y Dragones</title>
+    <link rel="icon" href="assets/brand/icogr.ico" sizes="192x192" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/dist/css/mj-bmd.css" rel="stylesheet">   
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none"> 
+  <symbol id="facebook" viewBox="0 0 16 16">
+    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+  </symbol>
+  <symbol id="tiktok" viewBox="0 0 16 16">
+    <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+  </symbol>
+  <symbol id="pdf" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+  </symbol>
+</svg>
+
+<div class="container py-1 mb-3">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example" >
+      <div class="container-fluid">
+        <div id="insignia"></div>        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills">
+            <li class="nav-item mt-4 mt-lg-0">
+              <a class="nav-link p-2 link-body-emphasis" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 link-body-emphasis" href="../estadisticas/estadisticas-clan.html">Estadisticas</a>
+            </li>            
+            <li class="nav-item dropdown">
+              <a class="nav-link p-2 dropdown-toggle text-white active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Modos de juego</a>
+              <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 ">
+                <li><a class="dropdown-item text-white bg-primary rounded-2 " href="../modo-juego/modo-juego-brujas-magos-y-dragones.html">Magos, Brujas y Dragones</a></li>
+                <li><a class="dropdown-item mt-1 rounded-2" href="../modo-juego/modo-juego-companeros-y-rivales.html">Compañeros y Rivales</a></li>
+                <li><a class="dropdown-item mt-1 rounded-2" href="../modo-juego/modo-juego-ruletas-y-comodines.html">Ruletas y Comodines</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 mt-1 mt-lg-0 link-body-emphasis" href="../reglamento/reglamento-guerreros-mayas.html">Reglamento</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="dropdown  bottom-0 end-0  me-3 bd-mode-toggle">
+                <button class="btn  py-2 d-flex align-items-center border-0"
+                        id="bd-theme"
+                        type="button"
+                        aria-expanded="false"
+                        data-bs-toggle="dropdown"
+                        aria-label="Toggle theme (auto)">
+                  <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                  <span class="visually-hidden" id="bd-theme-text">Tema</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                      <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                      Claro
+                      <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                      <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                      Oscuro
+                      <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                      <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                      Auto
+                      <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>          
+        </div>
+      </div>
+    </nav>
+</div>   
+
+<main class="container" >
+  <div class="text-body-emphasis  "  >
+    <div class="col-lg-6 " >
+      <h1 class="" >Brujas, Magos y Dragones</h1>
+  
+    </div>
+  </div>
+  <div class="col  border-0 ">
+    <div class="card borde-tarjeta border-0   overflow-hidden rounded-4 ">
+      <img src="../assets/brand/mj-bmd.jpg" class="img-fluid borde-clash div-alto"> 
+      
+    </div>
+    </div>  
+  
+  <div class="row">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      </h3>
+      <article class="blog-post">
+        <h2 class="mb-1">Modo de juego</h2>
+        <p class="blog-post-meta"><a>Creado por Kukulcán</a></p>
+        <p>En este modo, los 21 jugadores más activos en Guerra de Clanes son seleccionados para participar. Se asignan números a los jugadores según su posición. Este modo de juego añade una capa de estrategia al tener que adaptarse a las cartas que te toquen en la ruleta. ¡Buena suerte y disfruta del desafío!</p>
+        <p>Aquí te contamos cómo funciona:</p>
+        <hr>        
+        <h3></h3>        
+        <p></p>
+        <ol>
+          <li class="custom-font">Se elegirán a las 21 personas que más participen en Guerra de Clanes.</li><br>
+          <li>Se les dará un número de acuerdo a su posición por cantidad de puntos de Guerra, así de los <strong>jugadores 2 al 13,</strong> esperarán un rival después de la fase de clasificación.</li><br>
+          <li>Al terminar las partidas clasificatorias, se haran 2 ruletas.</li><br>
+          <ul>
+            <li>En la primera se definiran los rivales (esta ruleta solo se hará una vez).</li>
+            <li>La segunda ruleta será para definir el grupo de cartas que le tocará a cada persona (está se hará una vez por ronda para cada rival).</li>
+          </ul><br>
+          <li>Hay 6 grupos de cartas en la ruleta.</li><br>
+        </ol>
+        <div class="row  row-cols-1 row-cols-md-2 g-4 text-center">         
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Bárbaros</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Choza de bárbaros</li>
+                    <li>Ariete</li>
+                    <li>Bárbaros de elite</li>
+                    <li>Barril de bárbaros</li>
+                    <li>Bárbaros</li>
+                    <li>Caballero dorado</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Caballeros</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Caballero</li>
+                    <li>Principe oscuro</li>
+                    <li>Principe</li>
+                    <li>Gigante noble</li>
+                    <li>Principito</li>
+                    <li>Mega caballero</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Esqueletos</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Guardias</li>
+                    <li>Cementerio</li>
+                    <li>Rey esqueleto</li>
+                    <li>Esqueleto gigante</li>
+                    <li>Dragones esqueleto</li>
+                    <li>Barril de esqueletos</li>
+                    <li>Lapida</li>
+                    <li>Ejercito esqueletos</li>
+                    <li>Bombardero</li>
+                    <li>Esqueletos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Duendes</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Duende lanzadardos</li>
+                    <li>Jaula del forzudo</li>
+                    <li>Arbusto sospechozo</li>
+                    <li>Maldición duende</li>
+                    <li>Demoledor duende</li>
+                    <li>Duendes con lanza</li>
+                    <li>Pandilla de duendes</li>
+                    <li>Duendes</li>
+                    <li>Barril de duendes</li>
+                    <li>Duende gigante</li>
+                    <li>Choza de duendes</li>
+                    <li>Excavadora de duendes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Espíritus</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li class="list-group-item">Espíritu eléctrico</li>
+                    <li class="list-group-item">Espíritu de fuego</li>
+                    <li class="list-group-item">Espíritu sanador</li>
+                    <li class="list-group-item">Espíritu de hielo</li>
+                    <li class="list-group-item">Horno</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Arqueros</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li class="list-group-item">Princesa</li>
+                    <li class="list-group-item">Arquero mágico</li>
+                    <li class="list-group-item">Arqueras</li>
+                    <li class="list-group-item">Reina arquera</li>   
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <ol start="5">
+          <li>Los mazos se tendrán que formar de la siguiente forma.</li><br>
+          <ul>
+            <li>1 carta de Dragón</li>
+            <li>1 carta de Bruja</li>
+            <li>1 carta de Mago</li>
+            <li>3 cartas del grupo que le toque</li>
+            <li>2 cartas libres a elegir</li>
+          </ul><br>
+          <li>En los grupos de <strong>Dragón, Bruja y Mago</strong> se podrán utilizar las siguientes cartas.</li>
+        </ol><br>
+        <div class="row  row-cols-1 row-cols-md-3 g-4 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Dragón</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Dragón eléctrico</li>
+                    <li>Bebé dragón</li>
+                    <li>Dragón infernal</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Bruja</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li class="list-group-item">Bruja</li>
+                    <li class="list-group-item">Bruja madre</li>
+                    <li class="list-group-item">Bruja nocturna</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Mago</h4>
+              </div>
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li class="list-group-item">Mago</li>
+                    <li class="list-group-item">Mago de hielo</li>
+                    <li class="list-group-item">Mago eléctrico</li>
+                </ul>
+              </div>
+            </div>
+          </div>          
+        </div><br>
+        <h3>Ejemplo</h3>
+        <p>En la ruleta me tocó el grupo de Espíritus, entonces puedo elegir 3 cartas de ese grupo, ahora debo elegir un dragón, una bruja y un mago, además 2 cartas extra que pueden ser las que yo quiera, <strong>excepto Bola de fuego, esta carta NO ESTA PERMITIDA.</strong></p>
+        <p>Mi elección quedaria así:</p>
+        <div class="row  row-cols-1 row-cols-md-3 g-4 text-center">
+          <div class="col">            
+          </div>
+          <div class="col">
+            <div class="card mb-4 border-0">              
+              <div class="card-body">            
+                <ul class="list-unstyled mt-3 mb-3">
+                    <li class="list-group-item"><img src="../assets/brand/mazo-duelo-ej.png" class="img-fluid rounded-3"></li>                   
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">            
+          </div>          
+        </div>
+        <ul>
+          <li>Bruja nocturna</li>
+          <li>Mago de hielo</li>
+          <li>Dragón infernal</li>
+          <li>Espíritu de fuego</li>
+          <li>Espíritu sanador</li>
+          <li>Espíritu de hielo</li>
+          <li>Montapuercos</li>
+          <li>Flechas</li>
+        </ul><br>
+        <ol start="7">
+          <li>No esta permitida la bola de fuego y las evoluciones.</li><br>          
+          <li>Con lo anterior claro, se jugaran la clasificación a la siguiente ronda a <strong>2 - 3 victorias.</strong></li><br>
+          <li><strong>Cualquier cambio en sus mazos será una aliminación directa</strong> así que recuerden preguntar y verificar con el líder o un colíder.</li><br>
+          <li>Se seguirán jugando las partidas de Guerra de clanes.</li><br>
+          <li>La persona que no se encuentre en el grupo de whatsapp, no será considerada para el torneo, esto se debe a temas de organización, su lugar lo tomara el siguiente lugar en la cantidad de puntos de guerra de clanes.</li>
+        </ol><br>        
+      </article>
+    </div>
+
+    <div class="col-md-4 mt-3">
+      <div class="position-sticky" style="top: 1rem;">
+        <div>
+          <h4 class="fst-italic"></h4>
+          <ul class="list-unstyled pb-4">
+            <img src="../assets/brand/bmd-web.jpg" class="img-fluid rounded-4">            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<div class="bg-dark text-white">
+<div class="container bg-dark ">
+  <footer class="py-5">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">      
+      <li class="ms-3"><a  class="text-white" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#tiktok"/></svg></a></li>
+      <li class="ms-3"><a  class="text-white" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+      <li class="ms-3"><a  class="text-white" href="../reglamento/Reglamento-interno-Guerreros-Mayas.pdf" target="_blank"><svg class="bi" width="24" height="24"><use xlink:href="#pdf"/></svg></a></li>
+    </ul>
+    <p class="text-center">&copy; 2024 Guerreros Mayas.</p>
+    <p class="text-center"><small>v 2.2</small></p>
+  </footer>
+</div>
+</div>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/insignia.js"></script>
+
+    </body>
+</html>
