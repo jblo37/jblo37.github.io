@@ -366,7 +366,7 @@ body {
 .bg-gradiente {
     border: 8px double transparent;
     
-    background-image: linear-gradient(black, black), linear-gradient(74.78deg, #2d85f3, #db00ff);
+    background-image: linear-gradient(black, black), linear-gradient(90deg, #2d85f3, #db00ff);
     background-origin: border-box;
     background-clip: content-box, border-box;
 }
