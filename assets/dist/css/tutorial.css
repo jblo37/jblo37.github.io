@@ -1,0 +1,53 @@
+body {
+          
+         font-family: "Manrope", sans-serif !important; 
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      .dropdown-item.active, .dropdown-item:active {
+          --bs-dropdown-link-active-color: none;    
+          --bs-dropdown-link-active-bg:none;
+      }
+
+      .activo {
+        
+        background-color: pry
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      } 
+      
+      ol li::marker{
+        font-weight: bold;        
+      }
+        
+      @media (min-width: 992px){
+        .div-alto{
+          height: 400px;
+          object-fit: cover;
+        }
+      }
