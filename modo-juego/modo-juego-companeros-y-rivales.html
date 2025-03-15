@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <meta property="og:title" content="Clan Guerreros Mayas">
+    <meta property="og:description" content="Aquí podras seguir tus avances en puntos de guerra y los eventos de nuestra comunidad.">
+    <meta property="og:image" content="https://guerrerosmayas.me/assets/brand/og-img-index.jpg">
+    <meta property="og:url" content="https://guerrerosmayas.me">
+    <title>Compañeros y rivales</title>
+    <link rel="icon" href="../assets/brand/icogr.png" sizes="192x192" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/dist/css/mj-companeros-y-rivales.css" rel="stylesheet">
+  </head>
+  <body class="bg-body-tertiary">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+  
+
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none"> 
+  <symbol id="facebook" viewBox="0 0 16 16">
+    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+  </symbol>
+  <symbol id="tiktok" viewBox="0 0 16 16">
+    <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+  </symbol>
+  <symbol id="pdf" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5zM1.6 11.85H0v3.999h.791v-1.342h.803q.43 0 .732-.173.305-.175.463-.474a1.4 1.4 0 0 0 .161-.677q0-.375-.158-.677a1.2 1.2 0 0 0-.46-.477q-.3-.18-.732-.179m.545 1.333a.8.8 0 0 1-.085.38.57.57 0 0 1-.238.241.8.8 0 0 1-.375.082H.788V12.48h.66q.327 0 .512.181.185.183.185.522m1.217-1.333v3.999h1.46q.602 0 .998-.237a1.45 1.45 0 0 0 .595-.689q.196-.45.196-1.084 0-.63-.196-1.075a1.43 1.43 0 0 0-.589-.68q-.396-.234-1.005-.234zm.791.645h.563q.371 0 .609.152a.9.9 0 0 1 .354.454q.118.302.118.753a2.3 2.3 0 0 1-.068.592 1.1 1.1 0 0 1-.196.422.8.8 0 0 1-.334.252 1.3 1.3 0 0 1-.483.082h-.563zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638z"/>
+    </symbol>
+</svg>
+
+<div class="container py-1 mb-3">
+  <nav class="navbar navbar-expand-lg bg-body rounded" aria-label="Eleventh navbar example" >
+      <div class="container-fluid">
+        <div id="insignia"></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-pills">
+            <li class="nav-item mt-4 mt-lg-0">
+              <a class="nav-link p-2 link-body-emphasis" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link p-2 dropdown-toggle link-body-emphasis" href="#" data-bs-toggle="dropdown" aria-expanded="false">Estadísticas</a>
+              <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 ">
+                <li><a class="dropdown-item  rounded-2" href="../estadisticas/estadisticas-guerra-de-clanes.html">Guerra de clanes</a></li>
+                <li><a class="dropdown-item mt-1 rounded-2 " href="../estadisticas/estadisticas-retro-royale.html">Retro Royale</a></li>
+                <li><a class="dropdown-item mt-1 rounded-2 " href="../estadisticas/estadisticas-2v2-ene-2025.html">2v2 <span class="ms-1 me-1">|</span> Ene-2025</a></li>
+                <li><a class="dropdown-item mt-1 rounded-2 " href="../estadisticas/estadisticas-2v2-nov-2024.html">2v2 <span class="ms-1 me-1">|</span> Nov-2024</a></li>        
+              </ul>
+            </li>            
+            <li class="nav-item dropdown">
+              <a class="nav-link p-2 dropdown-toggle text-white active" href="#" data-bs-toggle="dropdown" aria-expanded="false">Modos de juego</a>
+              <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0">
+                <li><a class="dropdown-item  rounded-2 " href="../modo-juego/modo-juego-brujas-magos-y-dragones.html">Magos, Brujas y Dragones</a></li>
+                <li><a class="dropdown-item mt-1 text-white bg-primary rounded-2"  href="../modo-juego/modo-juego-companeros-y-rivales.html">Compañeros y Rivales</a></li>
+                <li><a class="dropdown-item mt-1 rounded-2"  href="../modo-juego/modo-juego-ruletas-y-comodines.html">Ruletas y Comodines</a></li>
+                <li><a class="dropdown-item mt-1 rounded-2" href="../modo-juego/modo-juego-brackets.html">Brackets</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 mt-1 mt-lg-0 link-body-emphasis" href="../reglamento/reglamento-guerreros-mayas.html">Reglamento</a>
+            </li> 
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="dropdown  bottom-0 end-0  me-3 bd-mode-toggle">
+                <button class="btn  py-2 d-flex align-items-center border-0"
+                        id="bd-theme"
+                        type="button"
+                        aria-expanded="false"
+                        data-bs-toggle="dropdown"
+                        aria-label="Toggle theme (auto)">
+                  <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                  <span class="visually-hidden" id="bd-theme-text">Tema</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                      <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+                      Claro
+                      <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                      <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+                      Oscuro
+                      <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                      <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
+                      Auto
+                      <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>          
+        </div>
+      </div>
+    </nav>
+</div>   
+
+<main class="container" >
+  <div class="text-body-emphasis  "  >
+    <div class="col-lg-6 " >
+      <h1 class="" >Compañeros y Rivales</h1>
+  
+    </div>
+  </div>
+  <div class="col  border-0 ">
+    <div class="card borde-tarjeta border-0   overflow-hidden rounded-4 ">
+      <img src="../assets/brand/mj-companeros-y-rivales.jpg" class="img-fluid borde-clash div-alto">      
+    </div>
+    </div>
+  <div class="row">
+    <div class="">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      </h3>
+      <article class="blog-post">
+        <h2 class="mb-1"></h2>
+        <p class="blog-post-meta"><a>Creado por Angel</a></p>
+        <p>Enfrentamientos en duelos clasificatorios para asegurar su lugar en las eliminatorias. Partidas en modos 2vs2 y 1vs1, con equipos y modos decididos por una ruleta. ¡El primer jugador en ganar 3 puntos avanza a la siguiente fase! Cooperación y puntualidad son esenciales.</p>
+        <p></p>
+        <hr>        
+        <h3></h3>        
+        <p></p>
+        <ol>
+          <li class="custom-font">Se elegirán a las 21 personas que más participen en Guerra de clanes.</li><br>
+          <li>Se les dará un número de acuerdo a su posición por cantidad de puntos de Guerra, así de los <strong>jugadores 14 a 21,</strong> tendrán que hacer un enfrentamiento de clasificación para ganar un lugar en las eliminatorias del dicho torneo.</li><br>
+          <li>Las partidas de clasificación se jugarán en el modo duelo sino sabes como crear tu mazo de duelo <a href="../tutoriales/tutorial-mazo-duelo.html" style="text-decoration: none;">pulsa aquí.</a></li><br>
+          <li>Recuerda que en dichos encuentros solamente pueden usar <strong>una evolución por mazo</strong> en caso de que salga un modo de juego en el que puedan elegir sus mazos.</li><br>
+          <li><strong>Los jugadores 2 a 13,</strong> esperarán a sus adversarios y/o compañeros después de la fase de Clasificación</li><br>
+          <li>Los equipos se irán sacando por ruleta que será gestionada por Kukulcán, de esta forma conforme salga su nombre, se les dará un número del 1 al 16, haciendo 4 equipos.</li><br>
+          <li>En este modo se jugará en el modo victoria por puntaje y de ahí aun combate individual entre las primeras personas que obtengan 3 puntos o mas.</li><br>         
+          
+            <ul><br>
+              
+                <li>Los 4 equipos serán de 4 personas.</li><br>
+                <li>Los combates serán 2vs2.</li><br>
+                <li>Todos los jugadores deberán hacer equipo</li><br>
+              
+              <li class="list-unstyled"><strong>Ejemplo:</strong>
+                <br>
+                  <li>Jugador 1</li>
+                  <li>Jugador 2</li>
+                  <li>Jugador 3</li>
+                  <li>Jugador 4</li><br>
+                  <li>Jugador 1 / jugador 2 vs jugador 3 / jugador 4</li><br>
+                  <li>Jugador 1 / jugador 3 vs jugador 2 / jugador 4</li><br>
+                  <li>Jugador 1 / jugador 4 vs Jugador 2 vs jugador 3</li><br>
+                 
+                  <li>Siendo así que por ejemplo el "jugador 1" obtenga 3 victorias (lo que equivale a 3 puntos) será el primero en pasar a la siguiente ronda.</li><br>
+                  
+                
+              </li><br>                             
+            </ul>            
+          </li>
+          </ol>
+          <div class="row  row-cols-1 row-cols-md-3 g-4 text-center">
+          <div class="col ">
+            <div class="card mb-4 rounded-3 shadow-sm overflow-hidden">
+              <div class="row  row-cols-2 row-cols-md-2  text-center card-header py-3 ">
+                <div class="border-end">
+                  <h4 class="my-0 fw-normal">Ronda 1</h4>
+                </div>
+                <div>
+                  <h4 class="my-0 fw-normal">Puntos</h4>                                
+                </div>
+              </div>
+              <div class="row  row-cols-2 row-cols-md-2  text-center">
+                <div class="card-body border-end">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>Jugador 1</li>
+                      <li>Jugador 2</li>
+                      <li>Jugador 3</li>
+                      <li>Jugador 4</li>
+                  </ul>
+                </div>
+                <div class="card-body">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>1</li>
+                      <li>1</li>
+                      <li>0</li>
+                      <li>0</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="card mb-4 rounded-3 shadow-sm overflow-hidden">
+              <div class="row  row-cols-2 row-cols-md-2  text-center card-header py-3 ">
+                <div class="border-end">
+                  <h4 class="my-0 fw-normal">Ronda 2</h4>
+                </div>
+                <div>
+                  <h4 class="my-0 fw-normal">Puntos</h4>                                
+                </div>
+              </div>
+              <div class="row  row-cols-2 row-cols-md-2  text-center">
+                <div class="card-body border-end">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>Jugador 1</li>
+                      <li>Jugador 2</li>
+                      <li>Jugador 3</li>
+                      <li>Jugador 4</li>
+                  </ul>
+                </div>
+                <div class="card-body">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>2</li>
+                      <li>1</li>
+                      <li>1</li>
+                      <li>0</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="card mb-4 rounded-3 shadow-sm overflow-hidden">
+              <div class="row  row-cols-2 row-cols-md-2  text-center card-header py-3">
+                <div class="border-end">
+                  <h4 class="my-0 fw-normal">Ronda 3</h4>
+                </div>
+                <div>
+                  <h4 class="my-0 fw-normal">Puntos</h4>                                
+                </div>
+              </div>
+              <div class="row  row-cols-2 row-cols-md-2  text-center">
+                <div class="card-body border-end">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>Jugador 1</li>
+                      <li>Jugador 2</li>
+                      <li>Jugador 3</li>
+                      <li>Jugador 4</li>
+                  </ul>
+                </div>
+                <div class="card-body">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>3</li>
+                      <li>1</li>
+                      <li>1</li>
+                      <li>1</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </div><br>
+        <ul>         
+          <li class="list-unstyled">
+            <br>
+              <li>En la ronda 3 el jugador 1 ya ha clasificado.</li>  
+              <li>Sin embargo aún tiene que esperar a su rival que será el siguiente en obtener 3 puntos, de cualquier forma el deberá seguir jugando.</li>  
+           
+          </li><br><br>                             
+        </ul>
+          <div class="row  row-cols-1 row-cols-md-3 g-4 text-center">
+          <div class="col ">
+            <div class="card mb-4 rounded-3 shadow-sm overflow-hidden">
+              <div class="row  row-cols-2 row-cols-md-2  text-center card-header py-3 ">
+                <div class="border-end">
+                  <h4 class="my-0 fw-normal">Ronda 4</h4>
+                </div>
+                <div>
+                  <h4 class="my-0 fw-normal">Puntos</h4>                                
+                </div>
+              </div>
+              <div class="row  row-cols-2 row-cols-md-2  text-center">
+                <div class="card-body border-end">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>Jugador 1</li>
+                      <li>Jugador 2</li>
+                      <li>Jugador 3</li>
+                      <li>Jugador 4</li>
+                  </ul>
+                </div>
+                <div class="card-body">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>3</li>
+                      <li>2</li>
+                      <li>2</li>
+                      <li>1</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="card mb-4 rounded-3 shadow-sm overflow-hidden">
+              <div class="row  row-cols-2 row-cols-md-2  text-center card-header py-3 ">
+                <div class="border-end">
+                  <h4 class="my-0 fw-normal">Ronda 5</h4>
+                </div>
+                <div>
+                  <h4 class="my-0 fw-normal">Puntos</h4>                                
+                </div>
+              </div>
+              <div class="row  row-cols-2 row-cols-md-2  text-center">
+                <div class="card-body border-end">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>Jugador 1</li>
+                      <li>Jugador 2</li>
+                      <li>Jugador 3</li>
+                      <li>Jugador 4</li>
+                  </ul>
+                </div>
+                <div class="card-body">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>4</li>
+                      <li>2</li>
+                      <li>2</li>
+                      <li>2</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col ">
+            <div class="card mb-4 rounded-3 shadow-sm overflow-hidden">
+              <div class="row  row-cols-2 row-cols-md-2  text-center card-header py-3">
+                <div class="border-end">
+                  <h4 class="my-0 fw-normal">Ronda 6</h4>
+                </div>
+                <div>
+                  <h4 class="my-0 fw-normal">Puntos</h4>                                
+                </div>
+              </div>
+              <div class="row  row-cols-2 row-cols-md-2  text-center">
+                <div class="card-body border-end">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>Jugador 1</li>
+                      <li>Jugador 2</li>
+                      <li>Jugador 3</li>
+                      <li>Jugador 4</li>
+                  </ul>
+                </div>
+                <div class="card-body">            
+                  <ul class="list-unstyled mt-3 mb-4">
+                      <li>4</li>
+                      <li>3</li>
+                      <li>2</li>
+                      <li>3</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </div><br>
+        <ol>
+        <ul>         
+          <li class="list-unstyled">
+            <br>
+              <li>En este caso la ronda la ganó el jugador 2 y 4, así que estos se tendrán que enfrentar en una batala 1 vs 1.</li>  
+              <li>El ganador se deberá enfrentar en un combate 1 vs 1 con el jugador 1, de esta forma se define quién pasa a la siguiente ronda.</li>
+              <li>De los 4 equipos se elegira al jugador que gane el encuentro después de las rondas de puntos.</li>
+              <li>En la siguiente ronda se llevará a cabo otra ruleta para decidir el órden de jugadores en los encuentros.</li>
+              <li>El modo de juego será clásico 2 vs 2.</li>
+          
+          </li><br><br>                             
+        </ul>
+
+          <li>Este modo de juego requiere la cooperación de todos los competidores, así también de su organización y compromiso para acordar los encuentros.</li><br>
+          <li>De no presentarse uno de los rivales, se le descalificara automáticamente y se tomarán medidas que ya fueron previamente platicadas entre el líder y los colíderes.</li><br>
+          <li>Las medidas serán enfrentamientos 1 vs 1 en el modo duelo definiendo al ganador por cantidad de coronas gandas contra su rival (este puntaje es en el total de coronas en los 2 duelos que tendrá cada rival.)</li>        
+        </ol><br>             
+      </article>
+    </div>
+  </div>
+
+</main>
+<div id="footer" class="bg-dark text-white">
+</div>
+
+<script src="../assets/js/main.js"></script>
+
+    </body>
+</html>
